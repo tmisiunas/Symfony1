@@ -6,6 +6,9 @@ use App\Entity\Tmp;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+
 
 class TmpType extends AbstractType
 {
@@ -13,6 +16,7 @@ class TmpType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('description', TextareaType::class)
         ;
     }
 
