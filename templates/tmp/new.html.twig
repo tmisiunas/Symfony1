@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Tmp{% endblock %}
+
+{% block body %}
+    <h1>Create new Tmp</h1>
+
+    {{ include('tmp/_form.html.twig') }}
+
+    <a href="{{ path('app_tmp_index') }}">back to list</a>
+{% endblock %}
