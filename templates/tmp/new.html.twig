@@ -3,9 +3,16 @@
 {% block title %}New Tmp{% endblock %}
 
 {% block body %}
+
     <h1>Create new Tmp</h1>
 
-    {{ include('tmp/_form.html.twig') }}
+    <div class="card p-4">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="btn btn-success mt-3">Save</button>
+        {{ form_end(form) }}
+    </div>
 
-    <a href="{{ path('app_tmp_index') }}">back to list</a>
+    <a href="{{ path('app_tmp_index') }}" class="btn btn-secondary mt-3">Back</a>
+
 {% endblock %}

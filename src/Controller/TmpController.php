@@ -33,6 +33,8 @@ final class TmpController extends AbstractController
             $entityManager->persist($tmp);
             $entityManager->flush();
 
+            $this->addFlash('success', 'Saved successfully!');
+
             return $this->redirectToRoute('app_tmp_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -59,6 +61,8 @@ final class TmpController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
+            $this->addFlash('success', 'Saved successfully!');
+
             return $this->redirectToRoute('app_tmp_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -74,6 +78,7 @@ final class TmpController extends AbstractController
         if ($this->isCsrfTokenValid('delete'.$tmp->getId(), $request->getPayload()->getString('_token'))) {
             $entityManager->remove($tmp);
             $entityManager->flush();
+            $this->addFlash('success', 'Saved successfully!');
         }
 
         return $this->redirectToRoute('app_tmp_index', [], Response::HTTP_SEE_OTHER);

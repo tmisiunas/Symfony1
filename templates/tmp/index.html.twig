@@ -3,33 +3,37 @@
 {% block title %}Tmp index{% endblock %}
 
 {% block body %}
-    <h1>Tmp index</h1>
 
-    <table class="table">
+    <h1 class="mb-4">Tmp list</h1>
+
+    <a href="{{ path('app_tmp_new') }}" class="btn btn-primary mb-3">Create new</a>
+
+    <table class="table table-striped">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for tmp in tmps %}
             <tr>
                 <td>{{ tmp.id }}</td>
                 <td>{{ tmp.name }}</td>
+                <td>{{ tmp.description }}</td>
                 <td>
-                    <a href="{{ path('app_tmp_show', {'id': tmp.id}) }}">show</a>
-                    <a href="{{ path('app_tmp_edit', {'id': tmp.id}) }}">edit</a>
+                    <a href="{{ path('app_tmp_show', {'id': tmp.id}) }}" class="btn btn-sm btn-info">Show</a>
+                    <a href="{{ path('app_tmp_edit', {'id': tmp.id}) }}" class="btn btn-sm btn-warning">Edit</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="4">No records found</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_tmp_new') }}">Create new</a>
 {% endblock %}
