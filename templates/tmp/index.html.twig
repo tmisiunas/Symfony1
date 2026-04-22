@@ -15,6 +15,7 @@
             <th>Name</th>
             <th>Description</th>
             <th>Actions</th>
+            <th>Category</th>
         </tr>
         </thead>
         <tbody>
@@ -23,6 +24,7 @@
                 <td>{{ tmp.id }}</td>
                 <td>{{ tmp.name }}</td>
                 <td>{{ tmp.description }}</td>
+                <td>{{ tmp.category.name }}</td>
                 <td>
                     <a href="{{ path('app_tmp_show', {'id': tmp.id}) }}" class="btn btn-sm btn-info">Show</a>
                     <a href="{{ path('app_tmp_edit', {'id': tmp.id}) }}" class="btn btn-sm btn-warning">Edit</a>

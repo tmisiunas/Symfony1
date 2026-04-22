@@ -26,6 +26,7 @@ class Tmp
 
     #[ORM\ManyToOne(targetEntity: Category::class, inversedBy: 'tmps')]
     #[ORM\JoinColumn(nullable: false)]
+    #[Assert\NotNull]
     private ?Category $category = null;
 
     public function getId(): ?int
